@@ -1,0 +1,10 @@
+[2024-04-03 22:57:32] Error: SQLSTATE[HY000] [1045] Access denied for user 'Pykana'@'localhost' (using password: YES)
+[2024-04-03 22:58:04] Error: SQLSTATE[HY000] [1049] Unknown database 'db_ita2s'
+[2024-04-08 16:43:28] Error: SQLSTATE[HY000] [1049] Unknown database 'db_itasa'
+[2024-04-08 20:37:47] Error: SQLSTATE[HY000] [1049] Unknown database 'db_itasp'
+[2024-04-08 21:47:49] Error: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[2024-04-08 21:47:58] Error: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[2024-04-08 21:49:32] Error: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for 1 failed: Host desconocido. 
+[2024-04-09 19:17:32] Error: SQLSTATE[HY000] [1049] Unknown database 'db_itasd'
+[2024-04-09 19:27:36] Error: SQLSTATE[HY000] [1049] Unknown database 'db_itass'
+[2024-04-09 19:27:39] Error: SQLSTATE[HY000] [1049] Unknown database 'db_itass'
