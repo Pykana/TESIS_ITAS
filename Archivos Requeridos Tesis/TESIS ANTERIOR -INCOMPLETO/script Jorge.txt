@@ -1,0 +1,75 @@
+CREATE TABLE `cliente` (
+  `dni` varchar(8) NOT NULL,
+  `Nombre` varchar(45) NOT NULL,
+  `Apellido` varchar(45) NOT NULL,
+  `direccion` varchar(45) NOT NULL,
+  `edad` varchar(3) NOT NULL,
+  `telefono` varchar(9) NOT NULL,
+  `fecha_nacimiento` datetime NOT NULL,
+  PRIMARY KEY (`dni`),
+  UNIQUE KEY `dni_UNIQUE` (`dni`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+
+CREATE TABLE `etiquetas` (
+  `idEtiquetas` int NOT NULL AUTO_INCREMENT,
+  `nombreEtiqueta` varchar(45) NOT NULL,
+  PRIMARY KEY (`idEtiquetas`),
+  UNIQUE KEY `idEtiquetas_UNIQUE` (`idEtiquetas`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+CREATE TABLE `aporte` (
+  `idAporte` int NOT NULL,
+  `idCliente` varchar(8) NOT NULL,
+  `fechaAporte` datetime NOT NULL,
+  `aporteInicial` double NOT NULL,
+  `gananciaInteres` double NOT NULL,
+  `gananciaMora` double NOT NULL,
+  PRIMARY KEY (`idAporte`),
+  UNIQUE KEY `idAporte_UNIQUE` (`idAporte`),
+  KEY `FK_aporteCliente` (`idCliente`),
+  CONSTRAINT `FK_aporteCliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`dni`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+CREATE TABLE `prestamo` (
+  `idPrestamo` int NOT NULL,
+  `idCliente` varchar(8) NOT NULL,
+  `fechaCredito` datetime NOT NULL,
+  `importeCredito` double NOT NULL,
+  `modalidad` int NOT NULL,
+  `tasa` double NOT NULL,
+  PRIMARY KEY (`idPrestamo`),
+  KEY `FK_PrestamoCliemte_idx` (`idCliente`),
+  KEY `FK_PrestamoEtiqueta_idx` (`modalidad`),
+  CONSTRAINT `FK_PrestamoCliemte` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`dni`),
+  CONSTRAINT `FK_PrestamoEtiqueta` FOREIGN KEY (`modalidad`) REFERENCES `etiquetas` (`idEtiquetas`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+
+CREATE TABLE `detalle_prestamo` (
+  `iddetalle_prestamo` int NOT NULL,
+  `idPrestamo` int NOT NULL,
+  `idCliente` varchar(8) NOT NULL,
+  `idCuota` int NOT NULL,
+  `modalidad` int NOT NULL,
+  `cuota` double NOT NULL,
+  `fechaVencimiento` datetime NOT NULL,
+  `capital` double NOT NULL,
+  `interes` double NOT NULL,
+  `importeCouta` double NOT NULL,
+  `fechaPago` datetime NOT NULL,
+  PRIMARY KEY (`iddetalle_prestamo`),
+  UNIQUE KEY `iddetalle_prestamo_UNIQUE` (`iddetalle_prestamo`),
+  KEY `FK_DetalleEtiqueta_idx` (`modalidad`),
+  KEY `FK_DetalleCliente_idx` (`idCliente`),
+  KEY `FK_DetallePrestamo_idx` (`idPrestamo`),
+  CONSTRAINT `FK_DetalleCliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`dni`),
+  CONSTRAINT `FK_DetalleEtiqueta` FOREIGN KEY (`modalidad`) REFERENCES `etiquetas` (`idEtiquetas`),
+  CONSTRAINT `FK_DetallePrestamo` FOREIGN KEY (`idPrestamo`) REFERENCES `prestamo` (`idPrestamo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+

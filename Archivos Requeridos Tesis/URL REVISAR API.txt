@@ -1,0 +1,52 @@
+--select *from SGAA_Usuario where usuario = 'tpayllo'
+--update SGAA_Usuario set FlagActivo =1 , FlagAnulado = 0 where usuario = 'tpayllo'
+
+--select * from SGAA_Cliente where CodigoERP ='1000760-P'
+--select * from SGAA_Cliente where RUC ='1000760-P' or CodigoERP='1000760-P'
+
+
+--select Id_TxSAP from SGAA_Transaccion where NumOrden = '0180029874'
+
+
+--select * from SGAA_Transaccion where Id_Tx ='S20241080005'
+
+--select * from SGAA_TipoMovimientoSAP
+
+--select * from SGAA_Almacen
+
+--select * from SGAA_Transaccion 
+
+
+
+select * from sgaa_ua where  ua_codbarra = 'S20241080001'
+select * from sgaa_ua where  ua_codbarra = 'S20241080002'
+
+select  *from sgaa_producto where Id_Producto = '1472'
+select  *from sgaa_producto where Id_Producto = '1474'
+
+exec SGAA_SP_S_ValidarExisteUA @strUA='S20241130001'
+exec SGAA_SP_S_ValidarExisteUA @strUA='S20241080002'
+
+select * from SGAA_Ubicacion where id_ubicacion = '3237'
+
+select * from SGAA_Producto where CodigoSAP = '2090717'
+select * from sgaa_ua where Id_Producto = '1474'  --S20241130001
+
+
+
+--select * from SGAA_Transaccion where Id_Tx ='S20241080001'
+
+--Select * from SGAA_TransaccionDetalle where Id_Tx ='S20241080001'
+--Select * from SGAA_TransaccionDetalle where Id_Tx ='S20241080002'
+
+
+
+select  * from SGAA_Producto where codigoSAP ='2090717'
+select  *from sgaa_producto where codigoSAP = '2008690'
+
+select * from SGAA_OrdenProduccion 
+
+
+--ricardo.lopez
+
+select * from SGAA_Usuario where usuario = 'ricardo.lopez'
