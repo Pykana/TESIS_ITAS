@@ -6,7 +6,7 @@
     <title>Login ITAS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        body { overflow: hidden; }
+        body 
         .margin { margin-top: 200px }
     </style>
 </head>
@@ -24,8 +24,7 @@
                     <p class="text-center">INGENIERIA TECNICA  ASESORIA Y SERVICIOS ELECTRICOS Y  ELECTROMECANICOS E.I.R.L</p>
                 </div>
                 <div class="card-body">
-                <form id="loginForm" action="#" method="POST"> 
-                  <form action="Back/Services/LoginService.php" method="POST"> 
+                <form id="loginForm" action="front/MainBack.php" method="POST"> 
                         <div class="form-group">
                             <label for="username">Usuario:</label>
                             <input type="text" class="form-control" id="username" name="username" required>
@@ -35,7 +34,7 @@
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
-                    </form>
+                 </form>
                 </div>
                 <div class="card-footer text-muted">
                     <a href="Front/RegisterBack.php">Registrarse</a>
