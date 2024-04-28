@@ -17,7 +17,11 @@
         <div class="col-md-6">
             <div class="card mt-5">
                 <div class="card-header">
-                    <h3 class="text-center">Iniciar sesión</h3>
+                    <!-- <h3 class="text-center" >Inicio Sesion</h3> -->
+                    <div class="d-flex justify-content-center">
+                        <img src="img/logo.png" style="width: 100px; height: 100px;">
+                    </div>
+                    <p class="text-center">INGENIERIA TECNICA  ASESORIA Y SERVICIOS ELECTRICOS Y  ELECTROMECANICOS E.I.R.L</p>
                 </div>
                 <div class="card-body">
                 <form id="loginForm" action="#" method="POST"> 
@@ -33,6 +37,12 @@
                         <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
                     </form>
                 </div>
+                <div class="card-footer text-muted">
+                    <a href="Front/RegisterBack.php">Registrarse</a>
+                    <a href="Front/ForgotPassBack.php" class="float-right">¿Olvidaste tu contraseña?</a>
+                </div>
+                <!-- <div class="card-footer text-muted">
+                    <a class="float-right">INGENIERIA TECNICA  ASESORIA Y SERVICIOS ELECTRICOS Y  ELECTROMECANICOS E.I.R.L</a></div> -->
             </div>
         </div>
     </div>
