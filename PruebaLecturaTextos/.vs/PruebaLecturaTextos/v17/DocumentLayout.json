@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\eelias\\Documents\\GitHub\\PruebaLecturaTextos\\",
+  "WorkspaceRootPath": "C:\\xampp\\htdocs\\TESIS_ITAS\\PruebaLecturaTextos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87E90508-8F1E-49BB-B96D-E04AF0A26C8B}|PruebaLecturaTextos\\PruebaLecturaTextos.csproj|d:\\eelias\\documents\\github\\pruebalecturatextos\\pruebalecturatextos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{87E90508-8F1E-49BB-B96D-E04AF0A26C8B}|PruebaLecturaTextos\\PruebaLecturaTextos.csproj|c:\\xampp\\htdocs\\tesis_itas\\pruebalecturatextos\\pruebalecturatextos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87E90508-8F1E-49BB-B96D-E04AF0A26C8B}|PruebaLecturaTextos\\PruebaLecturaTextos.csproj|solutionrelative:pruebalecturatextos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,13 +20,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\eelias\\Documents\\GitHub\\PruebaLecturaTextos\\PruebaLecturaTextos\\Program.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\TESIS_ITAS\\PruebaLecturaTextos\\PruebaLecturaTextos\\Program.cs",
               "RelativeDocumentMoniker": "PruebaLecturaTextos\\Program.cs",
-              "ToolTip": "D:\\eelias\\Documents\\GitHub\\PruebaLecturaTextos\\PruebaLecturaTextos\\Program.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\TESIS_ITAS\\PruebaLecturaTextos\\PruebaLecturaTextos\\Program.cs",
               "RelativeToolTip": "PruebaLecturaTextos\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T13:55:42.986Z",
+              "WhenOpened": "2024-05-06T15:05:21.917Z",
               "EditorCaption": ""
             }
           ]

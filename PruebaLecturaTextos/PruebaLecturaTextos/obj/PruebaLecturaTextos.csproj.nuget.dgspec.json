@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\eelias\\Documents\\GitHub\\PruebaLecturaTextos\\PruebaLecturaTextos\\PruebaLecturaTextos.csproj": {}
+    "C:\\xampp\\htdocs\\TESIS_ITAS\\PruebaLecturaTextos\\PruebaLecturaTextos\\PruebaLecturaTextos.csproj": {}
   },
   "projects": {
-    "D:\\eelias\\Documents\\GitHub\\PruebaLecturaTextos\\PruebaLecturaTextos\\PruebaLecturaTextos.csproj": {
+    "C:\\xampp\\htdocs\\TESIS_ITAS\\PruebaLecturaTextos\\PruebaLecturaTextos\\PruebaLecturaTextos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\eelias\\Documents\\GitHub\\PruebaLecturaTextos\\PruebaLecturaTextos\\PruebaLecturaTextos.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\TESIS_ITAS\\PruebaLecturaTextos\\PruebaLecturaTextos\\PruebaLecturaTextos.csproj",
         "projectName": "PruebaLecturaTextos",
-        "projectPath": "D:\\eelias\\Documents\\GitHub\\PruebaLecturaTextos\\PruebaLecturaTextos\\PruebaLecturaTextos.csproj",
+        "projectPath": "C:\\xampp\\htdocs\\TESIS_ITAS\\PruebaLecturaTextos\\PruebaLecturaTextos\\PruebaLecturaTextos.csproj",
         "packagesPath": "C:\\Users\\eelias.NTCIP\\.nuget\\packages\\",
-        "outputPath": "D:\\eelias\\Documents\\GitHub\\PruebaLecturaTextos\\PruebaLecturaTextos\\obj\\",
+        "outputPath": "C:\\xampp\\htdocs\\TESIS_ITAS\\PruebaLecturaTextos\\PruebaLecturaTextos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -57,6 +57,14 @@
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

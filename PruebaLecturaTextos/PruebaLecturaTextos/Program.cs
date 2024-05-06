@@ -1,76 +1,81 @@
-﻿using Azure;
+﻿/*
+  This code sample shows Custom Model operations with the Azure Form Recognizer client library. 
+
+  To learn more, please visit the documentation - Quickstart: Document Intelligence (formerly Form Recognizer) SDKs
+  https://learn.microsoft.com/azure/ai-services/document-intelligence/quickstarts/get-started-sdks-rest-api?pivots=programming-language-csharp
+*/
+
+using Azure;
 using Azure.AI.FormRecognizer.DocumentAnalysis;
 
-//set `<your-endpoint>` and `<your-key>` variables with the values from the Azure portal to create your `AzureKeyCredential` and `DocumentAnalysisClient` instance
-string endpoint = "https://pruebatxt.cognitiveservices.azure.com/";
-string key = "df125a2b44aa4bd2b0fca12a5e59739b";
-AzureKeyCredential credential = new AzureKeyCredential(key);
+/*
+  Remember to remove the key from your code when you're done, and never post it publicly. For production, use
+  secure methods to store and access your credentials. For more information, see 
+  https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-security?tabs=command-line%2Ccsharp#environment-variables-and-application-configuration
+*/
+
+string endpoint = "https://elmerelias.cognitiveservices.azure.com/";
+string apiKey = "51be9b6dfe5e458bb77dda5e148953c6";
+AzureKeyCredential credential = new AzureKeyCredential(apiKey);
 DocumentAnalysisClient client = new DocumentAnalysisClient(new Uri(endpoint), credential);
 
-//sample document
-Uri fileUri = new Uri("https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/sample-layout.pdf");
+string modelId = "modelofacturaid";
+string filePath = @"D:\Descargas\prueba.pdf";
 
-AnalyzeDocumentOperation operation = await client.AnalyzeDocumentFromUriAsync(WaitUntil.Completed, "prebuilt-layout", fileUri);
+//Uri fileUri = new Uri("https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/sample-layout.pdf");
 
-AnalyzeResult result = operation.Value;
 
-foreach (DocumentPage page in result.Pages)
+//AnalyzeDocumentOperation operation = await client.AnalyzeDocumentFromUriAsync(WaitUntil.Completed, modelId, fileUri);
+//AnalyzeResult result = operation.Value;
+
+using (FileStream fileStream = File.OpenRead(filePath))
 {
-    Console.WriteLine($"Document Page {page.PageNumber} has {page.Lines.Count} line(s), {page.Words.Count} word(s),");
-    Console.WriteLine($"and {page.SelectionMarks.Count} selection mark(s).");
+    // Pasar el Stream al método AnalyzeDocumentAsync
+    AnalyzeDocumentOperation operation = await client.AnalyzeDocumentAsync(WaitUntil.Completed, modelId, fileStream);
+    AnalyzeResult result = operation.Value;
 
-    for (int i = 0; i < page.Lines.Count; i++)
+
+    Console.WriteLine($"Document was analyzed with model with ID: {result.ModelId}");
+
+    foreach (AnalyzedDocument document in result.Documents)
     {
-        DocumentLine line = page.Lines[i];
-        Console.WriteLine($"  Line {i} has content: '{line.Content}'.");
+        Console.WriteLine($"Document of type: {document.DocumentType}");
 
-        Console.WriteLine($"    Its bounding box is:");
-        Console.WriteLine($"      Upper left => X: {line.BoundingPolygon[0].X}, Y= {line.BoundingPolygon[0].Y}");
-        Console.WriteLine($"      Upper right => X: {line.BoundingPolygon[1].X}, Y= {line.BoundingPolygon[1].Y}");
-        Console.WriteLine($"      Lower right => X: {line.BoundingPolygon[2].X}, Y= {line.BoundingPolygon[2].Y}");
-        Console.WriteLine($"      Lower left => X: {line.BoundingPolygon[3].X}, Y= {line.BoundingPolygon[3].Y}");
-    }
-
-    for (int i = 0; i < page.SelectionMarks.Count; i++)
-    {
-        DocumentSelectionMark selectionMark = page.SelectionMarks[i];
-
-        Console.WriteLine($"  Selection Mark {i} is {selectionMark.State}.");
-        Console.WriteLine($"    Its bounding box is:");
-        Console.WriteLine($"      Upper left => X: {selectionMark.BoundingPolygon[0].X}, Y= {selectionMark.BoundingPolygon[0].Y}");
-        Console.WriteLine($"      Upper right => X: {selectionMark.BoundingPolygon[1].X}, Y= {selectionMark.BoundingPolygon[1].Y}");
-        Console.WriteLine($"      Lower right => X: {selectionMark.BoundingPolygon[2].X}, Y= {selectionMark.BoundingPolygon[2].Y}");
-        Console.WriteLine($"      Lower left => X: {selectionMark.BoundingPolygon[3].X}, Y= {selectionMark.BoundingPolygon[3].Y}");
-    }
-}
-
-foreach (DocumentStyle style in result.Styles)
-{
-    // Check the style and style confidence to see if text is handwritten.
-    // Note that value '0.8' is used as an example.
-
-    bool isHandwritten = style.IsHandwritten.HasValue && style.IsHandwritten == true;
-
-    if (isHandwritten && style.Confidence > 0.8)
-    {
-        Console.WriteLine($"Handwritten content found:");
-
-        foreach (DocumentSpan span in style.Spans)
+        foreach (KeyValuePair<string, DocumentField> fieldKvp in document.Fields)
         {
-            Console.WriteLine($"  Content: {result.Content.Substring(span.Index, span.Length)}");
+            string fieldName = fieldKvp.Key;
+            DocumentField field = fieldKvp.Value;
+
+            Console.WriteLine($"Field '{fieldName}': ");
+
+            Console.WriteLine($"  Content: '{field.Content}'");
+            Console.WriteLine($"  Confidence: '{field.Confidence}'");
         }
     }
-}
 
-Console.WriteLine("The following tables were extracted:");
-
-for (int i = 0; i < result.Tables.Count; i++)
-{
-    DocumentTable table = result.Tables[i];
-    Console.WriteLine($"  Table {i} has {table.RowCount} rows and {table.ColumnCount} columns.");
-
-    foreach (DocumentTableCell cell in table.Cells)
+    // Iterate over lines and selection marks on each page
+    foreach (DocumentPage page in result.Pages)
     {
-        Console.WriteLine($"    Cell ({cell.RowIndex}, {cell.ColumnIndex}) has kind '{cell.Kind}' and content: '{cell.Content}'.");
+        Console.WriteLine($"Lines found on page {page.PageNumber}");
+        foreach (var line in page.Lines)
+        {
+            Console.WriteLine($"  {line.Content}");
+        }
+
+        Console.WriteLine($"Selection marks found on page {page.PageNumber}");
+        foreach (var selectionMark in page.SelectionMarks)
+        {
+            Console.WriteLine($"  Selection mark is '{selectionMark.State}' with confidence {selectionMark.Confidence}");
+        }
+    }
+
+    // Iterate over the document tables
+    for (int i = 0; i < result.Tables.Count; i++)
+    {
+        Console.WriteLine($"Table {i + 1}");
+        foreach (var cell in result.Tables[i].Cells)
+        {
+            Console.WriteLine($"  Cell[{cell.RowIndex}][{cell.ColumnIndex}] has content '{cell.Content}' with kind '{cell.Kind}'");
+        }
     }
 }

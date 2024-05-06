@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PruebaLecturaTextos
-build_property.ProjectDir = D:\eelias\Documents\GitHub\PruebaLecturaTextos\PruebaLecturaTextos\
+build_property.ProjectDir = C:\xampp\htdocs\TESIS_ITAS\PruebaLecturaTextos\PruebaLecturaTextos\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
