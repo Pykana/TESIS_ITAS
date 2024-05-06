@@ -1,0 +1,20 @@
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\bin\Debug\net8.0\Lectura de Textos.exe
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\bin\Debug\net8.0\Lectura de Textos.deps.json
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\bin\Debug\net8.0\Lectura de Textos.runtimeconfig.json
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\bin\Debug\net8.0\Lectura de Textos.dll
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\bin\Debug\net8.0\Lectura de Textos.pdb
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\bin\Debug\net8.0\Azure.AI.FormRecognizer.dll
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\bin\Debug\net8.0\Azure.Core.dll
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\bin\Debug\net8.0\System.Memory.Data.dll
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\Lectura de Textos.csproj.AssemblyReference.cache
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\Lectura de Textos.GeneratedMSBuildEditorConfig.editorconfig
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\Lectura de Textos.AssemblyInfoInputs.cache
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\Lectura de Textos.AssemblyInfo.cs
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\Lectura de Textos.csproj.CoreCompileInputs.cache
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\Lectura .2C11CBDA.Up2Date
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\Lectura de Textos.dll
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\refint\Lectura de Textos.dll
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\Lectura de Textos.pdb
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\Lectura de Textos.genruntimeconfig.cache
+D:\eelias\Documents\GitHub\Develop\Lectura de Textos\obj\Debug\net8.0\ref\Lectura de Textos.dll

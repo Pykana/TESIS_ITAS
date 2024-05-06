@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\eelias\\Documents\\GitHub\\Develop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7820FA87-3657-42F3-8472-2C590BE23E40}|Lectura de Textos\\Lectura de Textos.csproj|d:\\eelias\\documents\\github\\develop\\lectura de textos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7820FA87-3657-42F3-8472-2C590BE23E40}|Lectura de Textos\\Lectura de Textos.csproj|solutionrelative:lectura de textos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\eelias\\Documents\\GitHub\\Develop\\Lectura de Textos\\Program.cs",
+              "RelativeDocumentMoniker": "Lectura de Textos\\Program.cs",
+              "ToolTip": "D:\\eelias\\Documents\\GitHub\\Develop\\Lectura de Textos\\Program.cs",
+              "RelativeToolTip": "Lectura de Textos\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T14:19:05.604Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
